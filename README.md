@@ -42,7 +42,7 @@ algorithms.
 #### First stretch goal
 
 Add money into the game. Start the game with a certain amount of money and play until you
-loose all of in or break the bank.
+loose all of it or break the bank.
 
 #### Second stretch goal
 
