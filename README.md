@@ -46,4 +46,4 @@ loose all of it or break the bank.
 
 #### Second stretch goal
 
-Make a really nice ui. Add a main meny page and more images.
+Make a really nice ui. Add a main menu page and more images.
