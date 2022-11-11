@@ -11,7 +11,7 @@ You can do it!!
 
 ## GitHub
 
-To complete this assignment, you need to fork this repository, add your code in the "code" folder, and then submit a pull request on GitHub (from your repository into the Technigo one) for review. [Read the guide on GitHub](https://guides.github.com/activities/forking/) for more info on how to do this.
+To complete this assignment, you need to fork this repository, add your code in the "code" folder, and then submit a pull request on GitHub (from your repository into this one) for review. [Read the guide on GitHub](https://guides.github.com/activities/forking/) for more info on how to do this.
 
 ### :books: Reading List
 
