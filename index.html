@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blackjack</title>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blackjack</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-  <body>
-    <script src="code.js"></script>
-  </body>
+    <body>
+        <div class="buttons">
+            <button class="hitButton">Hit</button>
+            <button class="stayButton">Stay</button>
+        </div>
+        <h1 class="score">Your Score: <span class="playerScore">0</span></h1>
+        <h2>Your cards: <span class="playerSum"></span></h2>
+        <div class="playerCards"></div>
+        <h1 class="score">Dealer Score: <span class="dealerScore">0</span></h1>
+        <h2>Dealer cards: <span class="dealerSum"></span></h2>
+        <div class="dealerCards"></div>
+        <button class="dealButton">Deal</button>
+        <script type="module" src="code.js"></script>
+    </body>
 </html>
