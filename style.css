@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(1, 71, 1); */
+    background-image: linear-gradient(
+        to right,
+        rgb(1, 56, 1),
+        rgb(1, 71, 1),
+        rgb(1, 56, 1)
+    );
+    /* background-image: radial-gradient(rgb(1, 88, 1), rgb(1, 37, 1) 90%); */
+    background-size: contain;
+    height: 100vh;
+    box-sizing: border-box;
+}
+h1,
+h2 {
+    margin: 1rem;
+    background-color: green;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    border-radius: 10px;
+    border: 5px solid rgba(0, 0, 0, 0.329);
+}
+button {
+    font-size: 2rem;
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
+
+    background-color: rgb(153, 23, 23);
+    border: 5px solid rgba(0, 0, 0, 0.329);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+img {
+    height: 150px;
+    margin: 5px;
+    box-shadow: 4px 4px 10px black;
+}
+
+.hide {
+    display: none;
+}
+
+.dealButton {
+    margin-top: 1rem;
+}
