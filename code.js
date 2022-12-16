@@ -14,8 +14,6 @@ let totalNum = 0;
 let robotTotalNum = 0;
 
 startGame.addEventListener('click',()=>{  
-    startGame.textContent = 'Let Robot Take Crad'
-    stopBtn.textContent = 'Robot Take Card'
     const cardRandom = Math.random()*cards.length
     const cardRandomNum = Math.floor(cardRandom)
 
@@ -27,54 +25,47 @@ startGame.addEventListener('click',()=>{
      cardsImage.appendChild(imgTag);
 
      const cardNum =cards[cardRandomNum].num;
-     const h5Tag = document.createElement('h5');
-     /* h5Tag.innerHTML =  'Your Card Number : ' +cardNum+ ' '; */
-     cardNumber.appendChild(h5Tag);
-
      totalNum += cardNum;
-     totalNumber.innerHTML = 'Your Total Card Number : '+totalNum;
-     if ( totalNum > 21){
-         result.innerHTML = 'Result : Over 21, You lost '
+    /*  totalNumber.innerHTML = 'Player1 Total Card Number : '+totalNum; */
+     if ( totalNum > 21 ){
+         result.innerHTML = 'Result :Player1 Total Card Number :'+totalNum +'<br></br>  Over 21, Player 1 lost!'
          startGame.style.display = 'none';
      }
      else if(totalNum == 21){
-        result.innerHTML = 'Result : You won, congratulations! '
+        result.innerHTML = 'Result :Player1 Total Card Number : '+totalNum + '<br></br> Player 1 won, congratulations! '
      }
-     else{
-        result.innerHTML = 'Result : Your Total Card Number : '+totalNum
+     else if( totalNum < 21 && robotTotalNum < 21 && totalNum > robotTotalNum){
+        result.innerHTML = 'Result : Player 1 Total Card Number : '+totalNum
      }
-
-    stopBtn.addEventListener('click',()=>{
-        stopBtn.textContent = 'Let User Take Card'
-        startGame.textContent = 'User Take Crad'
-
-        const cardRandom = Math.random()*cards.length
-        const cardRandomNum = Math.floor(cardRandom)
-
-        robotTotalNum +=cards[cardRandomNum].num;
-        if (robotTotalNum < 21){
-            robotResult.innerHTML = ' REsult :Robot Total card Number ='+ robotTotalNum
-        }
-       
-        const imgSrc = cards[cardRandomNum].file
-        const imgTag = document.createElement('img');
-        imgTag.width = '100'
-        imgTag.height = '180'
-        imgTag.src = `images/${imgSrc}`
-        robotCard.appendChild(imgTag);
-
-        if (robotTotalNum > 21){
-            stopBtn.style.display = 'none'
-            robotResult.innerHTML = ' Robot Total card Number '+ robotTotalNum+  ',<br>  <br>Result: Over 21, Robot Lost'
-        }
-        else if(robotTotalNum == 21){
-            robotResult.innerHTML = ' Robot Total card Number '+ robotTotalNum+  ',<br>  <br>Result: Robot won'
-        }
-        playAgain.addEventListener('click',()=>{
-            window.location.reload();
-        })
-    });
 })
+
+stopBtn.addEventListener('click',()=>{
+    const cardRandom = Math.random()*cards.length
+    const cardRandomNum = Math.floor(cardRandom)
+
+    const imgSrc = cards[cardRandomNum].file
+    const imgTag = document.createElement('img');
+    imgTag.width = '100'
+    imgTag.height = '180'
+    imgTag.src = `images/${imgSrc}`
+    robotCard.appendChild(imgTag);
+
+    robotTotalNum +=cards[cardRandomNum].num;
+    if (robotTotalNum < 21 ){
+        robotResult.innerHTML = ' Result :Player 2 Total card Number : '+ robotTotalNum
+    }
+   
+    if (robotTotalNum > 21){
+        stopBtn.style.display = 'none'
+        robotResult.innerHTML = ' Player 2 Total card Number '+ robotTotalNum+  ',<br>  <br>Result: Over 21, Player 2 Lost!'
+    }
+    else if(robotTotalNum == 21){
+        robotResult.innerHTML = ' Player 2 Total card Number '+ robotTotalNum+  ',<br>  <br>Result: Player 2 won'
+    }
+    playAgain.addEventListener('click',()=>{
+        window.location.reload();
+    })
+});
 
 
 
