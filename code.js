@@ -84,6 +84,12 @@ stopPlay.addEventListener('click',()=>{
     else if (robotTotalNum < 21 && totalNum > 21  ){
         won.innerHTML = 'Player 2 Won!'
     }
+    else if ( totalNum == 21  ){
+        won.innerHTML = 'Player 1 Blackjack, Congratulations!'
+    }
+    else if (robotTotalNum == 21  ){
+        won.innerHTML = 'Player 2 Blackjack, Congratulations!'
+    } 
 })
 playAgain.addEventListener('click',()=>{
     window.location.reload();
