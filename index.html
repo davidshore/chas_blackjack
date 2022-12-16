@@ -3,10 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
     <title>Blackjack</title>
   </head>
 
   <body>
-    <script src="code.js"></script>
+    <div class="container">
+      <button class="draw">Draw</button>
+      <button class="stop">Stop</button>
+      <button class="play-again hide">Play Again</button>
+      <span class="points"></span>
+      <span class="choose-ace hide">, Choose value of ace: </span>
+      <button class="ace-one hide">1</button>
+      <button class="ace-eleven hide">11</button>
+      <span class="result"></span>
+      <div class="cards"></div>
+      <h2 class="dealer">Dealer</h2>
+      <span class="points"></span>
+      <div class="cards"></div>
+    </div>
+
+    <script type="module" src="code.js"></script>
   </body>
 </html>
