@@ -1,14 +1,17 @@
 export const gameParams = {
+
+    bet: 0,
     cardDelay: 800,
-    playerBlackjack: false,
-    playerCards: [],
-    playerSum: 0,
+    deck: null,
     dealerBlackjack: false,
     dealerCards: [],
     dealerSum: 0,
-    playerMoney: 0,
+    double: false,
+    hand: 0,
+    playerBlackjack: false,
     playerCardContainers: [],
-    deck: null,
-    bet: 0,
-    double: false
+    playerCards: [],
+    playerMoney: 0,
+    playerSum: 0,
+
 }
