@@ -39,29 +39,29 @@ export const cards = [
   { num: 1, file: "ace_of_diamonds.png" },
   { num: 1, file: "ace_of_hearts.png" },
   { num: 1, file: "ace_of_spades.png" },
-  { num: 1, file: "ace_of_spades2.png" },
+
   { num: 10, file: "jack_of_clubs.png" },
-  { num: 10, file: "jack_of_clubs2.png" },
+
   { num: 10, file: "jack_of_diamonds.png" },
-  { num: 10, file: "jack_of_diamonds2.png" },
+
   { num: 10, file: "jack_of_hearts.png" },
-  { num: 10, file: "jack_of_hearts2.png" },
+
   { num: 10, file: "jack_of_spades.png" },
-  { num: 10, file: "jack_of_spades2.png" },
+
   { num: 10, file: "king_of_clubs.png" },
-  { num: 10, file: "king_of_clubs2.png" },
+
   { num: 10, file: "king_of_diamonds.png" },
-  { num: 10, file: "king_of_diamonds2.png" },
+
   { num: 10, file: "king_of_hearts.png" },
-  { num: 10, file: "king_of_hearts2.png" },
+
   { num: 10, file: "king_of_spades.png" },
-  { num: 10, file: "king_of_spades2.png" },
+
   { num: 10, file: "queen_of_clubs.png" },
-  { num: 10, file: "queen_of_clubs2.png" },
+
   { num: 10, file: "queen_of_diamonds.png" },
-  { num: 10, file: "queen_of_diamonds2.png" },
+
   { num: 10, file: "queen_of_hearts.png" },
-  { num: 10, file: "queen_of_hearts2.png" },
+
   { num: 10, file: "queen_of_spades.png" },
-  { num: 10, file: "queen_of_spades2.png" },
+
 ];

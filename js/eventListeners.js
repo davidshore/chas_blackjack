@@ -1,0 +1,16 @@
+import { bet } from "./bet.js";
+import { newGame } from "./newGame.js";
+import { split } from "./split.js";
+import { stand } from "./stand.js";
+
+export const eventListeners = () => {
+
+    document.getElementById('betButton').addEventListener('click', bet);
+    document.getElementById('splitButton').addEventListener('click', split);
+    document.getElementById('standButton').addEventListener('click', stand);
+    document.getElementById('newGameButton').addEventListener('click', newGame);
+
+
+
+}
+
