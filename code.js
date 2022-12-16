@@ -68,10 +68,10 @@ stopPlay.addEventListener('click',()=>{
     stopBtn.style.display = 'none'
 
     if (robotTotalNum < 21 && totalNum < 21 && robotTotalNum< totalNum ){
-        won.innerHTML = 'Player 1 Won'
+        won.innerHTML = 'Player 1 Won!'
     }
     else if (robotTotalNum < 21 && totalNum < 21 && robotTotalNum> totalNum ){
-        won.innerHTML = 'Player 2 Won'
+        won.innerHTML = 'Player 2 Won!'
     }
     else if (robotTotalNum < 21 && totalNum < 21 && robotTotalNum== totalNum ){
         startGame.style.display = 'flex';
