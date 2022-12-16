@@ -83,6 +83,7 @@
     font-size: 20px;
     text-align: center;
     font-weight: bold;
+    border-radius: 10px;
 }
 .gameBtn{
     display: flex;
@@ -99,6 +100,7 @@
     font-weight: bolder;
     border-radius: 10px;
 }
-.playAgain:hover{
+.playAgain:hover,
+.stopPlay:hover{
     background-color: #022e31;
 }
