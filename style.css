@@ -56,8 +56,8 @@
 }
 .cardsImage,
 .robotCard{
-    max-height: 60vh;
-    min-height: 60vh;
+    max-height: 58vh;
+    min-height: 58vh;
 }
 .cardsImage img,
 .robotCard img{
