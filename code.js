@@ -20,7 +20,7 @@ startGame.addEventListener('click',()=>{
     const imgSrc = cards[cardRandomNum].file
     const imgTag = document.createElement('img');
     imgTag.width = '100'
-    imgTag.height = '180'
+    imgTag.height = '150'
     imgTag.src = `images/${imgSrc}`
      cardsImage.appendChild(imgTag);
 
@@ -28,11 +28,12 @@ startGame.addEventListener('click',()=>{
      totalNum += cardNum;
     /*  totalNumber.innerHTML = 'Player1 Total Card Number : '+totalNum; */
      if ( totalNum > 21 ){
-         result.innerHTML = 'Player1 Total Number :'+totalNum +'<br></br> Over 21, Player 1 lost!'
+         result.innerHTML = 'Player1 Total Number : '+totalNum +'<br></br> Over 21, Player 1 lost!'
          startGame.style.display = 'none';
      }
      else if(totalNum == 21){
         result.innerHTML = 'Player1 Total Number : '+totalNum + '<br></br> Player 1 Blackjack, Congratulations! '
+        startGame.style.display = 'none';
      }
      else if( totalNum < 21 ){
         result.innerHTML = 'Player 1 Total Number : '+totalNum
@@ -46,7 +47,7 @@ stopBtn.addEventListener('click',()=>{
     const imgSrc = cards[cardRandomNum].file
     const imgTag = document.createElement('img');
     imgTag.width = '100'
-    imgTag.height = '180'
+    imgTag.height = '150'
     imgTag.src = `images/${imgSrc}`
     robotCard.appendChild(imgTag);
 
@@ -57,10 +58,11 @@ stopBtn.addEventListener('click',()=>{
    
     if (robotTotalNum > 21){
         stopBtn.style.display = 'none'
-        robotResult.innerHTML = ' Player 2 Total Number '+ robotTotalNum+  ',<br>  <br>Over 21, Player 2 Lost!'
+        robotResult.innerHTML = ' Player 2 Total Number : '+ robotTotalNum+  '<br>  <br>Over 21, Player 2 Lost!'
     }
     else if(robotTotalNum == 21){
-        robotResult.innerHTML = ' Player 2 Total Number '+ robotTotalNum+  ',<br>  <br>Player 2 Blackjack, Congratulations!'
+        robotResult.innerHTML = ' Player 2 Total Number : '+ robotTotalNum+  ',<br>  <br>Player 2 Blackjack, Congratulations!'
+        stopBtn.style.display = 'none'
     }  
 });
 stopPlay.addEventListener('click',()=>{
@@ -89,6 +91,9 @@ stopPlay.addEventListener('click',()=>{
     }
     else if (robotTotalNum == 21  ){
         won.innerHTML = 'Player 2 Blackjack, Congratulations!'
+    } 
+    else if ( totalNum == 21 && robotTotalNum == 21 ){
+        won.innerHTML = 'Player 1 And Olayer 2 Blackjack, Congratulations!'
     } 
 })
 playAgain.addEventListener('click',()=>{
