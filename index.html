@@ -3,10 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Blackjack</title>
   </head>
 
   <body>
-    <script src="code.js"></script>
+    <div class="cardContainer">
+      <div class="cradMain">
+        <div class="suerCard">
+          <button class="startGame">Player 1 Take Card</button>
+          <div class="cardsImage"></div>
+          <div class="cardNumber"></div>
+          <div class="result"></div>
+        </div>
+        <div class="robotsCard">
+          <button class="stop">Player 2 Take Card</button>
+          <div class="robotCard"></div>
+          <div class="robotResult"></div>
+        </div>
+      </div>
+      <div class="won"> Stop play game to see winner</div>
+      <div class="gameBtn">
+        <button class="playAgain">Play Game Again</button>
+        <button class="stopPlay">Stop Play Game </button>
+      </div>
+    </div>
+    
+
+    <script type="module" src="./code.js"></script>
   </body>
 </html>
