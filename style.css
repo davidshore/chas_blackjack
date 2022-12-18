@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.cardImage {
+  width: 150px;
+}
+
+.playersDiv {
+  display: flex;
+  height: 150px;
+  width: 1000px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 50px 0 50px;
+  align-items: center;
+  border: 2px solid red;
+  background-color: red;
+}
+
+button {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid black;
+  font-size: larger;
+}
+
+#cardsELement,
+#dealerCards {
+  margin: 20px 0 20px 20px;
+}
+
+.container {
+  margin-top: 1.5em;
+  border: 2px solid black;
+  width: 1004px;
+  height: 680px;
+  background-color: white;
+  box-shadow: 5px 10px;
+}
+
+#result {
+  color: white;
+}
