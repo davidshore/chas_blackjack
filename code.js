@@ -1,4 +1,7 @@
-const startBtn = document.querySelector('#start-game'),
+import { cards } from './cards.js';
+
+const newCards = cards,
+  startBtn = document.querySelector('#start-game'),
   menuContainer = document.querySelector('.menu-container'),
   gameContainer = document.querySelector('.game-container'),
   drawPile = document.querySelector('#draw-pile'),
@@ -46,13 +49,6 @@ function toggleBetBtn() {
   lockBetBtn.classList.toggle('hide');
   btnOff(betAddBtn, betChip);
   btnOff(betRemoveBtn, returnChip);
-}
-
-//Fetches cards from exported const
-async function getCards() {
-  const response = await import('./cards.js');
-
-  return response.cards;
 }
 
 //Generates the draw pile with the finished cards in random order.
@@ -543,14 +539,12 @@ function transferChips(toTarget) {
 //Creates game
 function newGame() {
   toggleMenu();
-  getCards().then((cards) => {
-    fillDrawPile(cards);
-    createAndFillChips();
-    newHands();
-    btnOff(drawBtn, drawAndCheckScore);
-    btnOff(stayBtn, revealAndCheckScore);
-    btnOff(newRoundBtn, newRound);
-    btnOff(lockBetBtn, lockBets);
-    btnOff(betRemoveBtn, returnChip);
-  });
+  fillDrawPile(newCards);
+  createAndFillChips();
+  newHands();
+  btnOff(drawBtn, drawAndCheckScore);
+  btnOff(stayBtn, revealAndCheckScore);
+  btnOff(newRoundBtn, newRound);
+  btnOff(lockBetBtn, lockBets);
+  btnOff(betRemoveBtn, returnChip);
 }
