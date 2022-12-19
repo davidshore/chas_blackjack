@@ -16,7 +16,7 @@ export const addCardElement = (card, player, containerNumber, cardNumber) => {
 
         if (cardNumber !== 0) {
 
-            cardElement.style.transform = `translate(-50%, -50%) translate(${cardNumber * 25}%, -${cardNumber * 20}%)`;
+            cardElement.style.transform = `translate(-50%, -110%) translate(${cardNumber * 25}%, -${cardNumber * 20}%)`;
         }
 
         gameParams.playerCardContainers[containerNumber].appendChild(cardElement);

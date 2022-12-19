@@ -1,9 +1,11 @@
 import { addCardElement } from "./addCardElement.js";
+import { calculateSum } from "./calculateSum.js";
 import { drawCard } from "./drawCard.js";
 import { gameParams } from "./gameParams.js"
 
 export const firstRound = () => {
 
+    gameParams.payoutMultiplier = 2.5;
     const gameMessage = document.getElementById('gameMessage');
     const currentBet = document.getElementById('bet');
     const bankroll = document.getElementById('bankroll');
@@ -56,8 +58,8 @@ export const firstRound = () => {
                         if (gameParams.dealerBlackjack) {
 
                             gameMessage.innerHTML = 'It´s a draw, you get your money back.';
-                            gameParams.playerMoney += gameParams.bet;
-                            gameParams.bet = 0;
+                            gameParams.playerMoney += gameParams.bet[0];
+                            gameParams.bet[0] = 0;
                             currentBet.innerHTML = `Current bet: $0`
                             bankroll.innerHTML = `Bankroll: $${gameParams.playerMoney}`;
                             betButton.disabled = false;
@@ -67,8 +69,8 @@ export const firstRound = () => {
                         } else {
 
                             gameMessage.innerHTML = 'Black Jack! You win!';
-                            gameParams.playerMoney += gameParams.bet * 2.5;
-                            gameParams.bet = 0;
+                            gameParams.playerMoney += gameParams.bet[0] * gameParams.payoutMultiplier;
+                            gameParams.bet[0] = 0;
                             currentBet.innerHTML = `Current bet: $0`
                             bankroll.innerHTML = `Bankroll: $${gameParams.playerMoney}`;
                             betButton.disabled = false;
@@ -92,9 +94,17 @@ export const firstRound = () => {
 
                 }
 
+                const playerSum = calculateSum(true);
+
+                if (playerSum >= 9 && playerSum <= 11) {
+
+                    document.getElementById('doubleButton').disabled = false;
+
+                }
+
                 document.getElementById('hitButton').disabled = false;
                 document.getElementById('standButton').disabled = false;
-                document.getElementById('doubleButton').disabled = false;
+
 
             }, gameParams.cardDelay);
 

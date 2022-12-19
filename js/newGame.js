@@ -11,7 +11,7 @@ export const newGame = () => {
     gameParams.dealerCards.length = 0;
     gameParams.dealerSum = 0;
     gameParams.playerCardContainers.length = 0;
-    gameParams.bet = 0;
+    gameParams.bet[0] = 0;
     gameParams.double = false;
     document.getElementById('betButton').disabled = false;
     document.getElementById('hitButton').disabled = true;

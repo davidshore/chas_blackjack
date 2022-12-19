@@ -11,22 +11,30 @@
     <div class="container">
       <div id="dealerCards"></div>
       <div id="playerCards"></div>
-      <div class="money">
-        <div id="bankroll">Bankroll: $1000</div><div id="bet">Current bet: $0</div><div class="game-message-container"><h1 id="gameMessage">Place a bet</h1></div>
-      </div>
-      <div class="controls">
-        <input id="betSum" type="text" value="100">
-        <button id="betButton">Bet</button>
-        <button id="hitButton" disabled>Hit</button>
-        <button id="standButton" disabled>Stand</button>
-        <button id="splitButton" disabled>Split</button>
-        <button id="doubleButton" disabled>Double</button>
-
-      </div>
-      <div class="newgame-container">
-        <button id="newGameButton">New Game</button>
-      </div>
     </div>
+
+    <div class="ui">
+      <div class="controls">
+        <div class="betControls">
+          <input id="betSum" type="text" value="100">
+          <button id="betButton">Bet</button>
+        </div>
+        <div class="restControls">
+          <button id="hitButton" disabled>Hit</button>
+          <button id="standButton" disabled>Stand</button>
+          <button id="splitButton" disabled>Split</button>
+          <button id="doubleButton" disabled>Double</button>
+        </div>
+        
+      </div>
+      <div class="money">
+        <div id="bankroll">Bankroll: $1000</div><div id="bet">Current bet: $0</div>
+      </div>
+      <div class="game-message-container"><h1 id="gameMessage">Place a bet</h1></div>
+      <div class="newGameContainer"><button id="newGameButton">New Game</button></div>
+      
+    </div>
+    
 
     <script src="code.js" type="module"></script>
   </body>

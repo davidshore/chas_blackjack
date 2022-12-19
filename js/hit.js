@@ -16,12 +16,12 @@ export const hit = () => {
 
         if (playerSum > 21) {
 
-            gameParams.bet = 0;
+            gameParams.bet[0] = 0;
             document.getElementById('gameMessage').innerHTML = 'You bust. Place another bet.'
             document.getElementById('hitButton').disabled = true;
             document.getElementById('standButton').disabled = true;
             document.getElementById('betButton').disabled = false;
-            document.getElementById('bet').innerHTML = `Current bet: $${gameParams.bet}`
+            document.getElementById('bet').innerHTML = `Current bet: $${gameParams.bet[0]}`
 
         }
     }, gameParams.cardDelay);
