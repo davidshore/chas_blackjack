@@ -22,7 +22,7 @@ export const firstRound = () => {
     cardContainer.className = 'innerCardContainer'
     document.getElementById('playerCards').appendChild(cardContainer);
     gameParams.playerCardContainers.push(cardContainer)
-    console.log(gameParams);
+
     setTimeout(() => {
 
         addCardElement(gameParams.playerCards[0][0], true, 0, 0);

@@ -6,8 +6,6 @@ export const calculateWinner = () => {
     let win = false;
     const dealerSum = calculateSum();
 
-    console.log('dealerSum', dealerSum);
-
 
     if (dealerSum > 21) {
 
@@ -18,8 +16,6 @@ export const calculateWinner = () => {
     } else {
 
         const playerSum = calculateSum(true);
-
-        console.log('playerSum', playerSum);
 
         if (playerSum > dealerSum) {
 
