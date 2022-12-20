@@ -1,0 +1,43 @@
+body{
+
+    background-image: url("images/bg.jpg");
+   
+}
+
+#holder{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    
+}
+
+#result{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-style: italic;
+    font-size: large;
+}
+
+#takeCard{
+    color: white;
+    background-color: rgba(164, 255, 59, 0.719);
+    height: 50px; 
+}
+
+#stop{
+    color: white;
+    background-color: rgba(247, 8, 8, 0.719);
+    height: 50px;
+}
+#refresh{
+    color: white;
+    background-color: rgba(164, 255, 59, 0.719);
+    height: 50px;
+    margin-top: 50px;
+   
+}
