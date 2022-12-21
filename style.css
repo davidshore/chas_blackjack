@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+button {
+    margin: 0.2rem 0;
+}
+
+.cards {
+    box-sizing: content-box;
+    height: 250px;
+    width: fit-content;
+    border-radius: 0.55rem;
+}
+
+img {
+    height: 250px;
+}
+
+.dealer {
+    display: inline-block;
+}
+
+.hide {
+    display: none;
+}
