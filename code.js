@@ -20,7 +20,8 @@ const newCards = cards,
   betRemoveBtn = document.querySelector('#bet2'),
   betArea = document.querySelector('.bet-area'),
   lockBetBtn = document.querySelector('#lock-bet'),
-  buttonContainer = document.querySelector('.button-container');
+  buttonContainer = document.querySelector('.button-container'),
+  resultContainer = document.querySelector('.result-container');
 
 let cardArray = [],
   discardArray = [],
@@ -323,6 +324,7 @@ function checkIfGameOver() {
 }
 
 function winTextAnimation() {
+  resultContainer.style.width = 'fit-content';
   let text = Array.prototype.slice
     .call(resultDiv.innerText)
     .map((letter, index) => {
@@ -343,6 +345,7 @@ function gameOverReset() {
   resultDiv.innerHTML = '';
   chipAreaCpu.innerHTML = '';
   chipAreaPlayer.innerHTML = '';
+  resultContainer.style.width = '20rem';
   playerScore = 0;
   cpuScore = 0;
   hiddenPlayerPoints = 0;
@@ -415,7 +418,7 @@ function newHands() {
 function createAndFillChips() {
   let cpuChips = [],
     playerChips = [];
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 2; i++) {
     let position = `${i * -3.5}rem`;
     cpuChips = [];
     for (let i = 10; i > 0; i--) {

@@ -128,7 +128,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   height: 2rem;
-  width: fit-content;
+  width: 20rem;
   display: flex;
   align-items: center;
   justify-content: center;
