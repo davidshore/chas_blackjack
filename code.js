@@ -418,7 +418,7 @@ function newHands() {
 function createAndFillChips() {
   let cpuChips = [],
     playerChips = [];
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 4; i++) {
     let position = `${i * -3.5}rem`;
     cpuChips = [];
     for (let i = 10; i > 0; i--) {
