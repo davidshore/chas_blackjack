@@ -22,7 +22,7 @@ export const calculateWinner = () => {
             document.getElementById('gameMessage').innerHTML = 'You win! Place another bet.';
             win = true;
 
-        } else if (playerSum === dealerSum) {
+        } else if (playerSum === dealerSum && playerSum >= 20) {
 
             document.getElementById('gameMessage').innerHTML = 'It´s a draw. Place another bet.';
             gameParams.playerMoney += gameParams.hands[gameParams.currentHand].bet;

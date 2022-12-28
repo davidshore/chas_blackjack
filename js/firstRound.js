@@ -21,7 +21,7 @@ export const firstRound = () => {
     // fusk till blackjack
     const fusk = () => {
 
-        while (gameParams.hands[0].cards[0].num !== 1) {
+        while (gameParams.hands[0].cards[0].num !== 8) {
 
             gameParams.hands[0].cards[0] = drawCard();
 
@@ -40,7 +40,7 @@ export const firstRound = () => {
 
     const fuskDealer = () => {
 
-        while (gameParams.dealerCards[0].num !== 1) {
+        while (gameParams.dealerCards[0].num !== 8) {
 
             gameParams.dealerCards[0] = drawCard();
 
