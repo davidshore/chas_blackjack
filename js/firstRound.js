@@ -1,8 +1,10 @@
 import { addCardElement } from "./addCardElement.js";
 import { calculateSum } from "./calculateSum.js";
+import { checkForBlackJack } from "./checkForBlackJack.js";
 import { drawCard } from "./drawCard.js";
 import { gameParams } from "./gameParams.js"
 import { Hand } from "./Hand.js";
+
 
 export const firstRound = () => {
 
@@ -15,6 +17,49 @@ export const firstRound = () => {
     console.log(gameParams)
 
     gameParams.hands[0].cards.push(drawCard());
+
+    // fusk till blackjack
+    const fusk = () => {
+
+        while (gameParams.hands[0].cards[0].num !== 1) {
+
+            gameParams.hands[0].cards[0] = drawCard();
+
+        }
+
+        while (gameParams.hands[0].cards[1].num !== 10) {
+
+            gameParams.hands[0].cards[1] = drawCard();
+
+        }
+
+        addCardElement(gameParams.hands[0].cards[0], true, 0, 0);
+        addCardElement(gameParams.hands[0].cards[gameParams.hands[0].cards.length - 1], true, 0, 1);
+
+    }
+
+    const fuskDealer = () => {
+
+        while (gameParams.dealerCards[0].num !== 1) {
+
+            gameParams.dealerCards[0] = drawCard();
+
+        }
+
+        while (gameParams.dealerCards[1].num !== 10) {
+
+            gameParams.dealerCards[1] = drawCard();
+
+        }
+
+        addCardElement(gameParams.dealerCards[0]);
+        addCardElement(gameParams.dealerCards[1]);
+
+    }
+
+
+
+
     const cardContainer = document.createElement('div');
     cardContainer.className = 'innerCardContainer'
     document.getElementById('playerCards').appendChild(cardContainer);
@@ -34,44 +79,35 @@ export const firstRound = () => {
                 gameParams.hands[0].cards.push(drawCard());
                 addCardElement(gameParams.hands[0].cards[gameParams.hands[0].cards.length - 1], true, 0, 1);
 
-                if (gameParams.hands[0].cards[0].num === 1 || gameParams.hands[0].cards[1].num === 1) {
+                gameParams.hands[0].blackjack = checkForBlackJack(gameParams.hands[0].cards);
 
-                    if (gameParams.hands[0].cards[0].num === 10 || gameParams.hands[0].cards[1].num === 10) {
-                        gameParams.playerBlackjack = true;
+                if (gameParams.hands[0].blackjack) {
 
-                        setTimeout(() => {
-                            addCardElement(gameParams.dealerCards[1]);
-                        }, gameParams.cardDelay);
+                    setTimeout(() => {
+                        addCardElement(gameParams.dealerCards[1]);
+                    }, gameParams.cardDelay);
 
-                        if (gameParams.dealerCards[0].num === 1 || gameParams.dealerCards[1].num === 1) {
+                    gameParams.dealerBlackjack = checkForBlackJack(gameParams.dealerCards);
 
-                            if (gameParams.dealerCards[0].num === 10 || gameParams.dealerCards[1].num === 10) {
+                    if (gameParams.dealerBlackjack) {
 
-                                gameParams.dealerBlackjack = true;
-
-                            }
-                        }
-
-                        if (gameParams.dealerBlackjack) {
-
-                            gameMessage.innerHTML = 'It´s a draw, you get your money back.';
-                            gameParams.playerMoney += gameParams.hands[gameParams.currentHand].bet;
-                            currentBet.innerHTML = `Current bet: $0`
-                            bankroll.innerHTML = `Bankroll: $${gameParams.playerMoney}`;
-                            betButton.disabled = false;
-                            return;
+                        gameMessage.innerHTML = 'It´s a draw, you get your money back.';
+                        gameParams.playerMoney += gameParams.hands[gameParams.currentHand].bet;
+                        currentBet.innerHTML = `Current bet: $0`
+                        bankroll.innerHTML = `Bankroll: $${gameParams.playerMoney}`;
+                        betButton.disabled = false;
+                        return;
 
 
-                        } else {
+                    } else {
 
-                            gameMessage.innerHTML = 'Black Jack! You win!';
-                            gameParams.playerMoney += gameParams.hands[gameParams.currentHand].bet * gameParams.payoutMultiplier;
-                            currentBet.innerHTML = `Current bet: $0`
-                            bankroll.innerHTML = `Bankroll: $${gameParams.playerMoney}`;
-                            betButton.disabled = false;
-                            return;
+                        gameMessage.innerHTML = 'Black Jack! You win!';
+                        gameParams.playerMoney += gameParams.hands[gameParams.currentHand].bet * gameParams.payoutMultiplier;
+                        currentBet.innerHTML = `Current bet: $0`
+                        bankroll.innerHTML = `Bankroll: $${gameParams.playerMoney}`;
+                        betButton.disabled = false;
+                        return;
 
-                        }
                     }
 
                 }
