@@ -127,9 +127,13 @@ export const firstRound = () => {
 
                 const playerSum = calculateSum(true);
 
-                if (playerSum >= 9 && playerSum <= 11) {
+                if (playerSum >= 7 && playerSum <= 11) {
 
-                    document.getElementById('doubleButton').disabled = false;
+                    if (gameParams.playerMoney >= gameParams.hands[0].bet) {
+
+                        document.getElementById('doubleButton').disabled = false;
+
+                    }
 
                 }
 

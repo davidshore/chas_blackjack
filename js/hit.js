@@ -21,6 +21,7 @@ export const hit = () => {
             document.getElementById('standButton').disabled = true;
             document.getElementById('betButton').disabled = false;
             document.getElementById('bet').innerHTML = `Current bet: $0`
+            gameParams.hands[gameParams.currentHand].bust = true;
 
         }
     }, gameParams.cardDelay);

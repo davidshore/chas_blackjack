@@ -29,9 +29,9 @@ export const bet = (e) => {
 
     }
     gameParams.playerMoney -= gameParams.hands[gameParams.currentHand].bet;
-    document.getElementById('bet').innerHTML = `Current bet: $${gameParams.hands[gameParams.currentHand].bet}`
-    document.getElementById('bankroll').innerHTML = `Bankroll: $${gameParams.playerMoney}`
-    document.getElementById('gameMessage').innerHTML = ``
+    document.getElementById('bet').innerHTML = `Current bet: $${gameParams.hands[gameParams.currentHand].bet}`;
+    document.getElementById('bankroll').innerHTML = `Bankroll: $${gameParams.playerMoney}`;
+    document.getElementById('gameMessage').innerHTML = ``;
     e.currentTarget.disabled = true;
     firstRound();
 
