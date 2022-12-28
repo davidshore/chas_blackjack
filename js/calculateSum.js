@@ -7,7 +7,7 @@ export const calculateSum = (player) => {
 
     if (player) {
 
-        cards = gameParams.playerCards[gameParams.hand];
+        cards = gameParams.hands[gameParams.currentHand].cards;
 
     } else {
 

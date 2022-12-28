@@ -1,9 +1,11 @@
 import { gameParams } from "./gameParams.js";
 import { firstRound } from "./firstRound.js";
+import { resetGame } from "./resetGame.js";
 
 export const bet = (e) => {
 
-    gameParams.playerCardContainers.length = 0;
+    resetGame();
+
     document.getElementById('playerCards').innerHTML = '';
     document.getElementById('dealerCards').innerHTML = '';
 
@@ -18,16 +20,16 @@ export const bet = (e) => {
 
     } else if (playerBet > gameParams.playerMoney) {
 
-        gameParams.bet[0] = gameParams.playerMoney;
+        gameParams.hands[gameParams.currentHand].bet = gameParams.playerMoney;
         betInput.value = gameParams.playerMoney;
 
     } else {
 
-        gameParams.bet[0] = playerBet;
+        gameParams.hands[gameParams.currentHand].bet = playerBet;
 
     }
-    gameParams.playerMoney -= gameParams.bet[0];
-    document.getElementById('bet').innerHTML = `Current bet: $${gameParams.bet[0]}`
+    gameParams.playerMoney -= gameParams.hands[gameParams.currentHand].bet;
+    document.getElementById('bet').innerHTML = `Current bet: $${gameParams.hands[gameParams.currentHand].bet}`
     document.getElementById('bankroll').innerHTML = `Bankroll: $${gameParams.playerMoney}`
     document.getElementById('gameMessage').innerHTML = ``
     e.currentTarget.disabled = true;

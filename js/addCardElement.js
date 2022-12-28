@@ -19,7 +19,7 @@ export const addCardElement = (card, player, containerNumber, cardNumber) => {
             cardElement.style.transform = `translate(-50%, -110%) translate(${cardNumber * 25}%, -${cardNumber * 20}%)`;
         }
 
-        gameParams.playerCardContainers[containerNumber].appendChild(cardElement);
+        gameParams.hands[containerNumber].cardContainer.appendChild(cardElement);
 
     } else {
 

@@ -2,6 +2,7 @@ import { addCardElement } from "./addCardElement.js";
 import { calculateSum } from "./calculateSum.js";
 import { drawCard } from "./drawCard.js";
 import { gameParams } from "./gameParams.js"
+import { Hand } from "./Hand.js";
 
 export const firstRound = () => {
 
@@ -11,21 +12,17 @@ export const firstRound = () => {
     const bankroll = document.getElementById('bankroll');
     const betButton = document.getElementById('betButton');
 
-    gameParams.playerCards.length = 0;
-    gameParams.playerSum = 0;
-    gameParams.dealerCards.length = 0;
-    gameParams.dealerSum = 0;
+    console.log(gameParams)
 
-    gameParams.playerCards.push([])
-    gameParams.playerCards[0].push(drawCard());
+    gameParams.hands[0].cards.push(drawCard());
     const cardContainer = document.createElement('div');
     cardContainer.className = 'innerCardContainer'
     document.getElementById('playerCards').appendChild(cardContainer);
-    gameParams.playerCardContainers.push(cardContainer)
+    gameParams.hands[0].cardContainer = cardContainer;
 
     setTimeout(() => {
 
-        addCardElement(gameParams.playerCards[0][0], true, 0, 0);
+        addCardElement(gameParams.hands[0].cards[0], true, 0, 0);
 
         setTimeout(() => {
             gameParams.dealerCards.push(drawCard());
@@ -34,12 +31,12 @@ export const firstRound = () => {
 
             setTimeout(() => {
 
-                gameParams.playerCards[0].push(drawCard());
-                addCardElement(gameParams.playerCards[0][gameParams.playerCards[0].length - 1], true, 0, 1);
+                gameParams.hands[0].cards.push(drawCard());
+                addCardElement(gameParams.hands[0].cards[gameParams.hands[0].cards.length - 1], true, 0, 1);
 
-                if (gameParams.playerCards[0][0].num === 1 || gameParams.playerCards[0][1].num === 1) {
+                if (gameParams.hands[0].cards[0].num === 1 || gameParams.hands[0].cards[1].num === 1) {
 
-                    if (gameParams.playerCards[0][0].num === 10 || gameParams.playerCards[0][1].num === 10) {
+                    if (gameParams.hands[0].cards[0].num === 10 || gameParams.hands[0].cards[1].num === 10) {
                         gameParams.playerBlackjack = true;
 
                         setTimeout(() => {
@@ -58,8 +55,7 @@ export const firstRound = () => {
                         if (gameParams.dealerBlackjack) {
 
                             gameMessage.innerHTML = 'It´s a draw, you get your money back.';
-                            gameParams.playerMoney += gameParams.bet[0];
-                            gameParams.bet[0] = 0;
+                            gameParams.playerMoney += gameParams.hands[gameParams.currentHand].bet;
                             currentBet.innerHTML = `Current bet: $0`
                             bankroll.innerHTML = `Bankroll: $${gameParams.playerMoney}`;
                             betButton.disabled = false;
@@ -69,8 +65,7 @@ export const firstRound = () => {
                         } else {
 
                             gameMessage.innerHTML = 'Black Jack! You win!';
-                            gameParams.playerMoney += gameParams.bet[0] * gameParams.payoutMultiplier;
-                            gameParams.bet[0] = 0;
+                            gameParams.playerMoney += gameParams.hands[gameParams.currentHand].bet * gameParams.payoutMultiplier;
                             currentBet.innerHTML = `Current bet: $0`
                             bankroll.innerHTML = `Bankroll: $${gameParams.playerMoney}`;
                             betButton.disabled = false;
@@ -85,8 +80,8 @@ export const firstRound = () => {
                     addCardElement({ file: 'facedown_card.png' });
                 }, gameParams.cardDelay);
 
-                const firstCardSplit = gameParams.playerCards[0][0].file.split('_');
-                const secondCardSplit = gameParams.playerCards[0][1].file.split('_');
+                const firstCardSplit = gameParams.hands[0].cards[0].file.split('_');
+                const secondCardSplit = gameParams.hands[0].cards[1].file.split('_');
 
                 if (firstCardSplit[0] === secondCardSplit[0]) {
 

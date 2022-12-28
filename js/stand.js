@@ -7,9 +7,9 @@ export const stand = () => {
 
     document.getElementById('splitButton').disabled = true;
 
-    if (gameParams.hand < gameParams.playerCards.length - 1) {
+    if (gameParams.currentHand < gameParams.hands[gameParams.currentHand].length - 1) {
 
-        gameParams.hand++;
+        gameParams.currentHand++;
 
     } else {
 

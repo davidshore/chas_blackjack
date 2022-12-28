@@ -10,18 +10,17 @@ export const hit = () => {
     document.getElementById('splitButton').disabled = true;
 
     setTimeout(() => {
-        gameParams.playerCards[gameParams.hand].push(drawCard());
-        addCardElement(gameParams.playerCards[gameParams.hand][gameParams.playerCards[gameParams.hand].length - 1], true, gameParams.hand, gameParams.playerCards[gameParams.hand].length - 1);
+        gameParams.hands[gameParams.currentHand].cards.push(drawCard());
+        addCardElement(gameParams.hands[gameParams.currentHand].cards[gameParams.hands[gameParams.currentHand].cards.length - 1], true, gameParams.currentHand, gameParams.hands[gameParams.currentHand].cards.length - 1);
         const playerSum = calculateSum(true);
 
         if (playerSum > 21) {
 
-            gameParams.bet[0] = 0;
             document.getElementById('gameMessage').innerHTML = 'You bust. Place another bet.'
             document.getElementById('hitButton').disabled = true;
             document.getElementById('standButton').disabled = true;
             document.getElementById('betButton').disabled = false;
-            document.getElementById('bet').innerHTML = `Current bet: $${gameParams.bet[0]}`
+            document.getElementById('bet').innerHTML = `Current bet: $0`
 
         }
     }, gameParams.cardDelay);
