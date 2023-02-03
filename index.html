@@ -4,9 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blackjack</title>
+    <script src="./code.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <script src="code.js"></script>
+    <h1>blackjack</h1>
+    <button id="newCardBtn">hit me</button>
+    <button id="stopBtn">stop</button>
+    <p class="playerPoints">current points: <span id="playerPoints">0</span></p>
+    <p class="dealerPoints">dealers points: <span id="dealerPoints">0</span></p>
+    <h3>Players cards:</h3>
+    <div id="displayPlayersCards" class="card-container"></div>
+    <h3>Dealers cards:</h3>
+    <div id="displayDealersCards" class="card-container"></div>
   </body>
 </html>
