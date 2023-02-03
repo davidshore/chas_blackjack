@@ -1,0 +1,13 @@
+.card-container {
+    display: flex;
+    height: 270px;
+    width: 90%;
+}
+
+img {
+    height: 90%;
+}
+
+.dealerPoints {
+    opacity: 0;
+}

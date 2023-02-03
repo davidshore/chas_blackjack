@@ -1,4 +1,4 @@
-export const cards = [
+const cards = [
   { num: 2, file: "2_of_clubs.png" },
   { num: 2, file: "2_of_diamonds.png" },
   { num: 2, file: "2_of_hearts.png" },
@@ -65,3 +65,5 @@ export const cards = [
   { num: 10, file: "queen_of_spades.png" },
   { num: 10, file: "queen_of_spades2.png" },
 ];
+
+export default cards
