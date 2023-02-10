@@ -1,0 +1,12 @@
+* {
+  margin: 10px;
+}
+body {
+  margin: auto;
+  height: auto;
+  width: 600px;
+  border: 1px solid black;
+  font-family: Arial, Helvetica, sans-serif;
+
+  text-align: center;
+}
